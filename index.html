@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-RTL">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>My Freelance Portfolio | Modern Web Development</title>
@@ -13,27 +13,33 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style type"text/tailwindcss">
-        @layer base {
-            html {
-                /* This enables smooth scrolling when clicking nav links */
-                scroll-behavior: smooth;
-            }
+    <style>
+        /* Basic smooth scroll (keeps the html.scroll-smooth utility) */
+        html { scroll-behavior: smooth; }
+
+        /* Map the utility-like classes used in the markup to the loaded Google fonts */
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+
+        /* Simple fade-in-up animation usable via the class animate-fade-in-up */
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
         }
-        @layer theme {
-            extend {
-                fontFamily: {
-                    /* 'font-sans' will be our body text (Inter) */
-                    'sans': ['Inter', 'sans-serif'],
-                    /* 'font-display' will be our heading text (Space Grotesk) */
-                    'display': ['Space Grotesk', 'sans-serif']
-                }
-            }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeInUp {
+            0%   { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Respect users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up { animation: none; }
         }
     </style>
 </head>
 
-<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen">
+<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen overflow-x-hidden">
 
     <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-4 bg-black/30 backdrop-blur-md">
         <nav class="container mx-auto flex justify-between items-center">
@@ -52,22 +58,52 @@
                 </a>
             </div>
 
-            <button class="md:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <button class="md:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" aria-controls="mobile-menu">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
-
-            </nav>
+        </nav>
     </header>
 
     <main class="container mx-auto px-4 sm:px-8 py-12">
 
-        <section id="home" class="h-screen flex items-center justify-center">
-            <h1 class="font-display text-5xl md:text-7xl font-bold text-center">
-                Welcome to the Hero Section
-            </h1>
+        <section id="home" class="min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-12 -mt-16">
+            
+            <div class="space-y-6 text-center md:text-left opacity-0 animate-fade-in-up">
+                
+                <p class="font-display text-lg text-indigo-400 font-medium">
+                    Freelance Web Developer
+                </p>
+
+                <h1 class="font-display text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400">
+                    Transforming Ideas into Modern Web Solutions
+                </h1>
+
+                <p class="text-lg text-gray-300">
+                    I build fast, responsive, and dynamic websites that look 
+                    amazing and perform perfectly. Let's bring your vision to life.
+                </p>
+
+                <a href="#portfolio" 
+                   class="inline-block font-display text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-8 py-3 rounded-md shadow-lg hover:scale-105 transform transition-transform duration-300">
+                    View My Work
+                </a>
+            </div>
+
+            <div class="relative w-full h-96 opacity-0 animate-fade-in-up delay-300">
+                <div class="absolute inset-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full blur-3xl opacity-50"></div>
+                
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full blur-2xl opacity-40"></div>
+                
+                <div class="absolute inset-10 bg-gray-900/40 rounded-2xl shadow-2xl backdrop-blur-md border border-gray-700/50 flex items-center justify-center">
+                    <p class="font-display text-2xl text-gray-400">
+                        Modern Design
+                    </p>
+                </div>
+            </div>
+
         </section>
 
         <section id="services" class="min-h-screen py-20">
