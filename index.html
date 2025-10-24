@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Professional freelance web developer specializing in modern, responsive, and dynamic websites. Let's build your project.">
-    <title>My Freelance Portfolio | Modern Web Development</title>
+    <meta name="description" content="Novasites: Professional freelance web developer specializing in modern, responsive, and dynamic websites.">
+    <title>Novasites | Modern Web Development</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,9 +36,16 @@
 
 <body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen">
     
-    <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-4 bg-black/30 backdrop-blur-md">
+    <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-4 bg-black/50 backdrop-blur-xl"> 
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#home" class="font-display text-2xl font-bold text-white">MyPortfolio</a>
+            
+            <a href="#home" class="flex items-center space-x-3">
+                <img src="assets/logo.png" alt="Novasites Logo" class="h-12 w-auto"> 
+                <div class="flex flex-col">
+                    <span class="font-display text-3xl font-bold text-white leading-none">Novasites</span>
+                    <span class="font-sans text-sm text-indigo-300 leading-tight">Innovation in Digital Spaces</span> 
+                </div>
+            </a>
             
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#home" class="font-display text-gray-300 hover:text-white transition-colors">Home</a>
@@ -81,18 +90,17 @@
                         View My Work
                     </a>
                 </div>
-                <div class="relative h-[400px] animate-fade-in-up delay-300">
-                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl opacity-20 blur-3xl"></div>
-                    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 flex items-center justify-center">
-                         <p class="font-display text-2xl text-gray-400">Modern Design</p>
-                    </div>
+                
+                <div class="relative h-[400px] md:h-[450px] animate-fade-in-up delay-300">
+                    <img src="assets/hero-graphic.jpg" alt="Modern website design examples" 
+                         class="w-full h-full object-cover object-top rounded-2xl"> 
                 </div>
             </div>
         </section>
 
         <section id="services" class="py-20 min-h-screen">
             <div class="text-center mb-12">
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-white">My Services</h2>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-white">Website Services</h2>
                 <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
                     Choose the perfect plan to get your website built. Each plan 
                     is crafted to deliver maximum value and quality.
@@ -138,49 +146,84 @@
             </div>
         </section>
 
+        <section id="other-services" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-white">More Ways I Can Help</h2>
+                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
+                    From branding to marketing, I offer a full suite of digital creative services.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Logo Creation</h3>
+                    <p class="text-gray-300 mt-4">Forge a unique identity. I'll design a memorable logo that perfectly captures your brand's essence and speaks directly to your audience.</p>
+                </div>
+
+                <div class="bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Video Editing</h3>
+                    <p class="text-gray-300 mt-4">Polished, professional, perfect. From corporate videos to vlogs, I'll edit your footage into a compelling story that engages and retains viewers.</p>
+                </div>
+
+                <div class="bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Reels Editing</h3>
+                    <p class="text-gray-300 mt-4">Capture attention, fast. I specialize in creating short-form, high-impact videos for Instagram Reels & TikTok that stop the scroll.</p>
+                </div>
+
+                <div class="bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Ad Promotion</h3>
+                    <p class="text-gray-300 mt-4">Targeted campaigns that convert. I'll help you design and manage effective ad campaigns on social media to reach your ideal customers.</p>
+                </div>
+
+                <div class="bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Business Consulting</h3>
+                    <p class="text-gray-300 mt-4">From idea to launch. Get strategic advice on your digital business idea, from market validation to a go-to-market plan.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="portfolio" class="py-20 min-h-screen">
-            <h2 class="font-display text-4xl font-bold text-center mb-12">Recent Work</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">Recent Work</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <article class="group relative overflow-hidden rounded-lg">
-                    <div class="aspect-video bg-gray-800 flex items-center justify-center"><p class="font-display text-lg text-gray-500">Project Thumbnail</p></div>
-                    <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                        <div class="text-center p-4">
-                            <h3 class="font-display text-xl font-bold mb-2">Smart School Zone Safety</h3>
-                            <p class="text-gray-300 mb-4">Node.js, Firebase, and JavaScript for student tracking.</p>
-                            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">View Project</a>
-                        </div>
+                
+                <article class="rounded-xl overflow-hidden bg-gray-800/30 border border-gray-700/50 flex flex-col h-full">
+                    <img src="assets/project-school.jpg" alt="Smart School Zone Project" class="aspect-video w-full object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">Smart School Zone Safety</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">Node.js, Firebase, and JavaScript for student tracking.</p>
                     </div>
                 </article>
-                <article class="group relative overflow-hidden rounded-lg">
-                    <div class="aspect-video bg-gray-800 flex items-center justify-center"><p class="font-display text-lg text-gray-500">Project Thumbnail</p></div>
-                    <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                        <div class="text-center p-4">
-                            <h3 class="font-display text-xl font-bold mb-2">Sreenivasa Textiles</h3>
-                            <p class="text-gray-300 mb-4">A modern, responsive client website.</p>
-                            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">View Project</a>
-                        </div>
+                
+                <article class="rounded-xl overflow-hidden bg-gray-800/30 border border-gray-700/50 flex flex-col h-full">
+                    <img src="assets/project-textile.jpg" alt="Sreenivasa Textiles Project" class="aspect-video w-full object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">Sreenivasa Textiles</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">A modern, responsive client website.</p>
                     </div>
                 </article>
+
             </div>
         </section>
 
         <section id="about" class="py-20 min-h-screen">
-            <h2 class="font-display text-4xl font-bold text-center mb-12">About Me</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
             <div class="max-w-2xl mx-auto text-center space-y-6">
-                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 p-1">
-                    <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                         <span class="text-gray-500">You</span>
+                
+                <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 p-1">
+                    <div class="w-full h-full rounded-full bg-white p-1">
+                         <img src="assets/favicon.png" alt="Novasites Hero Graphic" 
+                              class="w-full h-full object-cover rounded-full"> 
                     </div>
                 </div>
-                <p class="text-lg text-gray-300">
-                    I'm a passionate web developer with expertise in modern web technologies.
-                    I love creating beautiful, functional websites that help businesses succeed online.
+                <p class="text-lg text-gray-200">
+                    I'm a passionate and results-driven web developer with deep expertise in modern, full-stack technologies. I specialize in translating a client's unique vision into a beautiful, functional, and high-performing website that helps their business succeed online. My process is built on a foundation of clean code, pixel-perfect responsive design, and powerful backend solutions using tools like Supabase and Tailwind CSS. I don't just build websites; I build fast, secure, and intuitive digital experiences that capture your brand and convert your visitors into customers
                 </p>
             </div>
         </section>
 
         <section id="contact" class="py-20 min-h-screen">
-            <h2 class="font-display text-4xl font-bold text-center mb-12">Get in Touch</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
             
             <form class="max-w-md mx-auto space-y-6" id="contact-form">
                 <div>
@@ -195,13 +238,18 @@
                 </div>
                 
                 <div>
-                    <label for="service_plan" class="block mb-2 font-display">Service Plan</label>
+                    <label for="service_plan" class="block mb-2 font-display">Service Plan</LAbel>
                     <select id="service_plan" name="service_plan" required
                             class="w-full p-3 rounded-md bg-gray-800/50 border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors">
                         <option value="none" disabled selected>Select a plan...</option>
-                        <option value="Classic">Classic</option>
-                        <option value="Premium">Premium</option>
-                        <option value="Advanced">Advanced</option>
+                        <option value="Website - Classic">Website - Classic</option>
+                        <option value="Website - Premium">Website - Premium</option>
+                        <option value="Website - Advanced">Website - Advanced</option>
+                        <option value="Logo Creation">Logo Creation</option>
+                        <option value="Video Editing">Video Editing</option>
+                        <option value="Reels Editing">Reels Editing</option>
+                        <option value="Ad Promotion">Ad Promotion</option>
+                        <option value="Business Consulting">Business Consulting</option>
                         <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
@@ -217,7 +265,7 @@
                     Send Message
                 </button>
             </form>
-
+            
             <p id="success-message" class="text-center text-2xl font-bold text-green-400 hidden max-w-md mx-auto mt-6">
                 Thank you! Your message has been sent. I'll get back to you soon.
             </p>
@@ -227,7 +275,7 @@
 
     <footer class="border-t border-gray-800">
         <div class="container mx-auto px-4 py-8 text-center text-gray-400">
-            <p>&copy; 2025 [Your Name Here]. All rights reserved.</p>
+            <p>&copy; 2025 Novasites. All rights reserved.</p>
         </div>
     </footer>
 
@@ -236,16 +284,12 @@
         const form = document.getElementById('contact-form');
         const submitButton = document.getElementById('submit-button');
         const successMessage = document.getElementById('success-message');
-
         const { createClient } = supabase;
         const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-
             const formData = new FormData(form);
             const inquiryData = {
                 name: formData.get('name'),
@@ -253,12 +297,10 @@
                 service_plan: formData.get('service_plan'),
                 message: formData.get('message')
             };
-
             try {
                 const { data, error } = await _supabase
                     .from('inquiries')
                     .insert([inquiryData]); 
-
                 if (error) {
                     console.error('Supabase error:', error);
                     alert('Error: Could not send message. Please try again.');
@@ -267,8 +309,8 @@
                 } else {
                     console.log('Success! Data sent:', data);
                     form.reset();
-                    form.style.display = 'none'; // This hides the form
-                    successMessage.classList.remove('hidden'); // This NOW WORKS!
+                    form.style.display = 'none';
+                    successMessage.classList.remove('hidden');
                 }
             } catch (error) {
                 console.error('JavaScript error:', error);
@@ -277,12 +319,9 @@
                 submitButton.textContent = 'Send Message';
             }
         });
-    </script>
 
-    <script>
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuButton.addEventListener('click', () => {
             const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
             menuButton.setAttribute('aria-expanded', !isExpanded);
@@ -290,4 +329,3 @@
         });
     </script>
 </body>
-</html>
