@@ -212,12 +212,13 @@
                 
                 <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 p-1">
                     <div class="w-full h-full rounded-full bg-white p-1">
-                         <img src="assets/favicon.png" alt="Novasites Hero Graphic" 
+                         <img src="assets/hero-graphic.jpg" alt="Novasites Hero Graphic" 
                               class="w-full h-full object-cover rounded-full"> 
                     </div>
                 </div>
-                <p class="text-lg text-gray-200">
-                    I'm a passionate and results-driven web developer with deep expertise in modern, full-stack technologies. I specialize in translating a client's unique vision into a beautiful, functional, and high-performing website that helps their business succeed online. My process is built on a foundation of clean code, pixel-perfect responsive design, and powerful backend solutions using tools like Supabase and Tailwind CSS. I don't just build websites; I build fast, secure, and intuitive digital experiences that capture your brand and convert your visitors into customers
+                <p class="text-lg text-gray-300">
+                    I'm a passionate web developer with expertise in modern web technologies.
+                    I love creating beautiful, functional websites that help businesses succeed online.
                 </p>
             </div>
         </section>
@@ -279,17 +280,27 @@
         </div>
     </footer>
 
-    <script src="config.js"></script>
     <script>
+        // Get elements from the page
         const form = document.getElementById('contact-form');
         const submitButton = document.getElementById('submit-button');
         const successMessage = document.getElementById('success-message');
+
+        // Initialize the Supabase client
+        // These keys are public and safe because we enabled Row Level Security (RLS)
+        const SUPABASE_URL = "https://hwoqpdjcuejkdzegzjgu.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3b3FwZGpjdWVqa2R6ZWd6amd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEyODU2NTIsImV4cCI6MjA3Njg2MTY1Mn0.7ssgqNCXcvET97ANg-OYImCg-m1KFCIsB8YJnIMTpGU";
+        
         const { createClient } = supabase;
         const _supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        // Listen for the form to be submitted
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
+
             const formData = new FormData(form);
             const inquiryData = {
                 name: formData.get('name'),
@@ -297,10 +308,12 @@
                 service_plan: formData.get('service_plan'),
                 message: formData.get('message')
             };
+
             try {
                 const { data, error } = await _supabase
                     .from('inquiries')
                     .insert([inquiryData]); 
+
                 if (error) {
                     console.error('Supabase error:', error);
                     alert('Error: Could not send message. Please try again.');
@@ -320,6 +333,7 @@
             }
         });
 
+        // Mobile Menu Script
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         menuButton.addEventListener('click', () => {
@@ -329,3 +343,4 @@
         });
     </script>
 </body>
+</html>
