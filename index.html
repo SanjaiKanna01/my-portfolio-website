@@ -3,136 +3,283 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Freelance Portfolio | Modern Web Development</title>
+    
     <meta name="description" content="Professional freelance web developer specializing in modern, responsive, and dynamic websites. Let's build your project.">
-
+    <title>My Freelance Portfolio | Modern Web Development</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <style>
-        /* Basic smooth scroll (keeps the html.scroll-smooth utility) */
-        html { scroll-behavior: smooth; }
-
-        /* Map the utility-like classes used in the markup to the loaded Google fonts */
+        html { 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
         .font-display { font-family: 'Space Grotesk', sans-serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
-
-        /* Simple fade-in-up animation usable via the class animate-fade-in-up */
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .animate-fade-in-up {
+            opacity: 0;
             animation: fadeInUp 1s ease-out forwards;
         }
-        .delay-300 { animation-delay: 300ms; }
-
-        @keyframes fadeInUp {
-            0%   { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        
+        .delay-300 {
+            animation-delay: 300ms;
         }
-
-        /* Respect users who prefer reduced motion */
+        
         @media (prefers-reduced-motion: reduce) {
-            .animate-fade-in-up { animation: none; }
+            .animate-fade-in-up {
+                animation: none;
+                opacity: 1;
+            }
+            html {
+                scroll-behavior: auto;
+            }
         }
     </style>
 </head>
 
-<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen overflow-x-hidden">
-
+<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen">
     <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-4 bg-black/30 backdrop-blur-md">
         <nav class="container mx-auto flex justify-between items-center">
-            
             <a href="#home" class="font-display text-2xl font-bold text-white">
                 MyPortfolio
             </a>
-
+            
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#home" class="font-display text-gray-300 hover:text-white transition-colors">Home</a>
                 <a href="#services" class="font-display text-gray-300 hover:text-white transition-colors">Services</a>
                 <a href="#portfolio" class="font-display text-gray-300 hover:text-white transition-colors">Portfolio</a>
                 <a href="#about" class="font-display text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#contact" class="font-display bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">
-                    Contact Me
-                </a>
+                <a href="#contact" class="font-display bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">Contact Me</a>
             </div>
-
-            <button class="md:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            
+            <button class="md:hidden p-2 text-gray-300 hover:text-white" aria-label="Menu" aria-expanded="false" id="menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
         </nav>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#contact" class="block px-3 py-2 bg-indigo-600 text-white rounded-md">Contact Me</a>
+            </div>
+        </div>
     </header>
 
     <main class="container mx-auto px-4 sm:px-8 py-12">
-
-        <section id="home" class="min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-12 -mt-16">
-            
-            <div class="space-y-6 text-center md:text-left opacity-0 animate-fade-in-up">
-                
-                <p class="font-display text-lg text-indigo-400 font-medium">
-                    Freelance Web Developer
-                </p>
-
-                <h1 class="font-display text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400">
-                    Transforming Ideas into Modern Web Solutions
-                </h1>
-
-                <p class="text-lg text-gray-300">
-                    I build fast, responsive, and dynamic websites that look 
-                    amazing and perform perfectly. Let's bring your vision to life.
-                </p>
-
-                <a href="#portfolio" 
-                   class="inline-block font-display text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-8 py-3 rounded-md shadow-lg hover:scale-105 transform transition-transform duration-300">
-                    View My Work
-                </a>
-            </div>
-
-            <div class="relative w-full h-96 opacity-0 animate-fade-in-up delay-300">
-                <div class="absolute inset-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full blur-3xl opacity-50"></div>
-                
-                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full blur-2xl opacity-40"></div>
-                
-                <div class="absolute inset-10 bg-gray-900/40 rounded-2xl shadow-2xl backdrop-blur-md border border-gray-700/50 flex items-center justify-center">
-                    <p class="font-display text-2xl text-gray-400">
-                        Modern Design
+        <section id="home" class="min-h-screen flex items-center -mt-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 animate-fade-in-up text-center md:text-left">
+                    <p class="font-display text-indigo-400">Freelance Web Developer</p>
+                    <h1 class="font-display text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+                        Transforming Ideas into Modern Web Solutions
+                    </h1>
+                    <p class="text-lg text-gray-300">
+                        I build fast, responsive, and dynamic websites that look 
+                        amazing and perform perfectly. Let's bring your vision to life.
                     </p>
+                    <a href="#portfolio" class="inline-block font-display bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-md transition-all hover:scale-105">
+                        View My Work
+                    </a>
+                </div>
+                
+                <div class="relative h-[400px] animate-fade-in-up delay-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl opacity-20 blur-3xl"></div>
+                    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 flex items-center justify-center">
+                         <p class="font-display text-2xl text-gray-400">Modern Design</p>
+                    </div>
                 </div>
             </div>
-
         </section>
 
-        <section id="services" class="min-h-screen py-20">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Services</h2>
-            <p class="text-center mt-4">This is where the 'Classic', 'Premium', and 'Advanced' plans will go.</p>
+        <section id="services" class="py-20 min-h-screen">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white">
+                    My Services
+                </h2>
+                <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
+                    Choose the perfect plan to get your website built. Each plan 
+                    is crafted to deliver maximum value and quality.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="relative flex flex-col h-full bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Classic</h3>
+                    <p class="text-gray-400 mt-2">Perfect for personal sites or small businesses.</p>
+                    
+                    <ul class="space-y-3 mt-6 text-gray-300 flex-grow">
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>3-5 Pages</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Mobile Responsive</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Contact Form</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Basic SEO</li>
+                    </ul>
+                    
+                    <a href="#contact" class="mt-8 block w-full text-center font-display bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-md transition-colors">
+                        Get Started
+                    </a>
+                </div>
+
+                <div class="relative flex flex-col h-full bg-gray-800/30 backdrop-blur-md border border-indigo-500 rounded-xl p-8 transition-all duration-300 scale-105 hover:border-purple-500">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-bold px-4 py-1 rounded-full">
+                        MOST POPULAR
+                    </div>
+
+                    <h3 class="font-display text-3xl font-bold text-white">Premium</h3>
+                    <p class="text-gray-400 mt-2">Ideal for growing businesses and professionals.</p>
+                    
+                    <ul class="space-y-3 mt-6 text-gray-300 flex-grow">
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Up to 10 Pages</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Mobile Responsive</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>CMS Integration (Blog)</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Advanced SEO</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Analytics Setup</li>
+                    </ul>
+                    
+                    <a href="#contact" class="mt-8 block w-full text-center font-display text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-6 py-3 rounded-md transition-colors">
+                        Get Started
+                    </a>
+                </div>
+
+                <div class="relative flex flex-col h-full bg-gray-800/30 backdrop-blur-md border border-gray-700/50 rounded-xl p-8 transition-all duration-300 hover:scale-105 hover:border-indigo-500">
+                    <h3 class="font-display text-3xl font-bold text-white">Advanced</h3>
+                    <p class="text-gray-400 mt-2">Full e-commerce or custom web applications.</p>
+                    
+                    <ul class="space-y-3 mt-6 text-gray-300 flex-grow">
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Unlimited Pages</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Custom Web App</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>E-commerce Functionality</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Database Integration</li>
+                        <li class="flex items-center"><span class="text-indigo-400 mr-2">✔</span>Full API Support</li>
+                    </ul>
+                    
+                    <a href="#contact" class="mt-8 block w-full text-center font-display bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-md transition-colors">
+                        Get Started
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section id="portfolio" class="min-h-screen py-20">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Portfolio</h2>
-            <p class="text-center mt-4">Placeholders for 'Smart School Zone' etc. will go here.</p>
+        <section id="portfolio" class="py-20 min-h-screen">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Recent Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <article class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center">
+                        <p class="font-display text-lg text-gray-500">Project Thumbnail</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                        <div class="text-center p-4">
+                            <h3 class="font-display text-xl font-bold mb-2">Smart School Zone Safety</h3>
+                            <p class="text-gray-300 mb-4">Node.js, Firebase, and JavaScript for student tracking.</p>
+                            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center">
+                        <p class="font-display text-lg text-gray-500">Project Thumbnail</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                        <div class="text-center p-4">
+                            <h3 class="font-display text-xl font-bold mb-2">Sreenivasa Textiles</h3>
+                            <p class="text-gray-300 mb-4">A modern, responsive client website.</p>
+                            <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </section>
 
-        <section id="about" class="min-h-screen py-20">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">About Me</h2>
-            <p class="text-center mt-4">My professional bio will go here.</p>
+        <section id="about" class="py-20 min-h-screen">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-2xl mx-auto text-center space-y-6">
+                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 p-1">
+                    <div class="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                         <span class="text-gray-500">You</span>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-300">
+                    I'm a passionate web developer with expertise in modern web technologies.
+                    I love creating beautiful, functional websites that help businesses succeed online.
+                </p>
+            </div>
         </section>
 
-        <section id="contact" class="min-h-screen py-20">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Contact Me</h2>
-            <p class="text-center mt-4">The Supabase-powered order form will be built here.</p>
+        <section id="contact" class="py-20 min-h-screen">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Get in Touch</h2>
+            <form class="max-w-md mx-auto space-y-6" id="contact-form">
+                <div>
+                    <label for="name" class="block mb-2 font-display">Name</label>
+                    <input type="text" id="name" name="name" required
+                           class="w-full p-3 rounded-md bg-gray-800/50 border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 font-display">Email</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full p-3 rounded-md bg-gray-800/50 border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2 font-display">Message</label>
+                    <textarea id="message" name="message" rows="4" required
+                              class="w-full p-3 rounded-md bg-gray-800/50 border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors"></textarea>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-3 rounded-md transition-colors font-display text-lg font-bold">
+                    Send Message
+                </button>
+            </form>
         </section>
-
     </main>
 
-    <footer class="w-full py-8 border-t border-gray-700/50">
-        <p class="text-center text-gray-400 text-sm">
-            &copy; 2025 [Your Name Here]. All rights reserved.
-        </p>
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-4 py-8 text-center text-gray-400">
+            <p>&copy; 2025 [Your Name Here]. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
