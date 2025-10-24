@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-RTL">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Freelance Portfolio | Modern Web Development</title>
+    <meta name="description" content="Professional freelance web developer specializing in modern, responsive, and dynamic websites. Let's build your project.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type"text/tailwindcss">
+        @layer base {
+            html {
+                /* This enables smooth scrolling when clicking nav links */
+                scroll-behavior: smooth;
+            }
+        }
+        @layer theme {
+            extend {
+                fontFamily: {
+                    /* 'font-sans' will be our body text (Inter) */
+                    'sans': ['Inter', 'sans-serif'],
+                    /* 'font-display' will be our heading text (Space Grotesk) */
+                    'display': ['Space Grotesk', 'sans-serif']
+                }
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black min-h-screen">
+
+    <header class="sticky top-0 z-50 w-full px-4 sm:px-8 py-4 bg-black/30 backdrop-blur-md">
+        <nav class="container mx-auto flex justify-between items-center">
+            
+            <a href="#home" class="font-display text-2xl font-bold text-white">
+                MyPortfolio
+            </a>
+
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#home" class="font-display text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#services" class="font-display text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="font-display text-gray-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="#about" class="font-display text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#contact" class="font-display bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition-colors">
+                    Contact Me
+                </a>
+            </div>
+
+            <button class="md:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-8 py-12">
+
+        <section id="home" class="h-screen flex items-center justify-center">
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-center">
+                Welcome to the Hero Section
+            </h1>
+        </section>
+
+        <section id="services" class="min-h-screen py-20">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Services</h2>
+            <p class="text-center mt-4">This is where the 'Classic', 'Premium', and 'Advanced' plans will go.</p>
+        </section>
+
+        <section id="portfolio" class="min-h-screen py-20">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Portfolio</h2>
+            <p class="text-center mt-4">Placeholders for 'Smart School Zone' etc. will go here.</p>
+        </section>
+
+        <section id="about" class="min-h-screen py-20">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">About Me</h2>
+            <p class="text-center mt-4">My professional bio will go here.</p>
+        </section>
+
+        <section id="contact" class="min-h-screen py-20">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center">Contact Me</h2>
+            <p class="text-center mt-4">The Supabase-powered order form will be built here.</p>
+        </section>
+
+    </main>
+
+    <footer class="w-full py-8 border-t border-gray-700/50">
+        <p class="text-center text-gray-400 text-sm">
+            &copy; 2025 [Your Name Here]. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

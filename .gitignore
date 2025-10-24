@@ -1,0 +1,17 @@
+ # This file tells Git to ignore files and folders.
+# We will create a file (e..g., config.js) to hold our API keys.
+# By adding its name here, we prevent it from ever being uploaded
+# to GitHub, keeping our secrets safe.
+
+# Ignore configuration files that will hold our secret keys
+config.js
+*.env
+.env.local
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Node.js dependency folder
+# We aren't using this yet, but it's good practice.
+/node_modules
